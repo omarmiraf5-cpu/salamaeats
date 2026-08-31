@@ -9,11 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // Fallback in case 'load' already fired
   setTimeout(() => preloader && preloader.classList.add('done'), 1800);
 
-  // Sticky header
+  // Sticky header + floating CTA visibility
   const header = document.getElementById('siteHeader');
+  const fab = document.querySelector('.fab');
+  const hero = document.querySelector('.hero');
   const onScroll = () => {
     if (window.scrollY > 40) header.classList.add('scrolled');
     else header.classList.remove('scrolled');
+    if (fab && hero) {
+      const pastHero = window.scrollY > hero.offsetHeight - 120;
+      fab.classList.toggle('is-visible', pastHero);
+    }
   };
   document.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
