@@ -135,22 +135,25 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, { passive: true });
 
-    // Pointer drag-to-scroll
+    // Pointer drag-to-scroll — mouse only. Touch/pen get native scrolling:
+    // hijacking scrollLeft during a touch gesture fights the browser's own
+    // momentum scroll and makes the slider feel stuck on phones/tablets.
     let isDown = false, startX = 0, startScroll = 0, moved = false;
     track.addEventListener('pointerdown', (e) => {
+      if (e.pointerType !== 'mouse') return;
       isDown = true; moved = false;
       startX = e.clientX; startScroll = track.scrollLeft;
       track.classList.add('dragging');
       stopAutoplay();
     });
     track.addEventListener('pointermove', (e) => {
-      if (!isDown) return;
+      if (!isDown || e.pointerType !== 'mouse') return;
       const dx = e.clientX - startX;
       if (Math.abs(dx) > 4) moved = true;
       track.scrollLeft = startScroll - dx;
     });
-    function endDrag() {
-      if (!isDown) return;
+    function endDrag(e) {
+      if (!isDown || (e.pointerType && e.pointerType !== 'mouse')) return;
       isDown = false;
       track.classList.remove('dragging');
       startAutoplay();
@@ -158,6 +161,10 @@ document.addEventListener('DOMContentLoaded', () => {
     track.addEventListener('pointerup', endDrag);
     track.addEventListener('pointerleave', endDrag);
     track.addEventListener('click', (e) => { if (moved) e.preventDefault(); }, true);
+
+    // Touch: just pause autoplay while the user is actively swiping.
+    track.addEventListener('touchstart', stopAutoplay, { passive: true });
+    track.addEventListener('touchend', startAutoplay, { passive: true });
 
     function startAutoplay() {
       stopAutoplay();

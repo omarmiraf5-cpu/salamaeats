@@ -321,6 +321,7 @@ section { padding: 120px 0; position: relative; }
   display: flex; gap: 28px; overflow-x: auto; scroll-snap-type: x proximity;
   scroll-behavior: smooth; padding: 6px 6px 30px; cursor: grab;
   scrollbar-width: none; -ms-overflow-style: none;
+  touch-action: pan-x pinch-zoom; -webkit-overflow-scrolling: touch;
 }
 .slider-track::-webkit-scrollbar { display: none; }
 .slider-track.dragging { cursor: grabbing; scroll-snap-type: none; }
