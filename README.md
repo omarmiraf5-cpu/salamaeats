@@ -30,6 +30,12 @@ or simply open `index.html` in a browser.
   will always look better. Every image is now a plain `<img>` tag — drop a photo into `assets/dishes/`
   and change the `src` (they are cropped with `object-fit: cover`, so any aspect ratio works).
   Regenerate or tweak them with `tools/gen_dishes.py` (`python3 tools/gen_dishes.py`).
+
+  **To use real photographs:** drop them into `assets/dishes/photos/` named after the dish
+  (`bariis-iskukaris.jpg`, `hilib-ari.jpg`, …) and run `python3 tools/use_photos.py`. Photos you
+  supply are wired into the slider, the hero and heritage arches, and the gallery automatically;
+  dishes without a photo keep their illustration, so you can add them a few at a time.
+  See `assets/dishes/photos/README.md` for the full name list and shooting notes.
 - The arch frames (`.arch-frame`) crop whatever image you give them into a rounded-arch shape, and each dish card's `.dish-media` is sized for a vertical food photo.
 - Add or reorder dishes in the "Chef's Selection" slider by editing the `.dish-card` articles in `index.html` — the arrows, dots, and autoplay adapt to however many cards are present.
 - Confirm the exact city/province/postal code for 16773 71 St and update the address and embedded map accordingly.
