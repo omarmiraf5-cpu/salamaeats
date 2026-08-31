@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Subtle arch photo tilt on mouse move
-  const heroArch = document.querySelector('.hero-arch');
+  const heroArch = document.querySelector('.heritage-media');
   const archFrame = heroArch ? heroArch.querySelector('.arch-frame') : null;
   if (heroArch && archFrame && window.matchMedia('(hover: hover)').matches) {
     heroArch.addEventListener('mousemove', (e) => {

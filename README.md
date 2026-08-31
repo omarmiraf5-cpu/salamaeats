@@ -1,12 +1,13 @@
 # Salama Eats Ltd — Website
 
-An elegant, single-page static website for Salama Eats Ltd, a halal Mediterranean grill located at 16773 71 St, Edmonton, AB. The design draws on Andalusian courtyard architecture (Moorish arches, geometric tile-inspired lattice texture) paired with Somali &amp; Arab hospitality — a black, gold and red palette, italic serif display type, a sliding "Chef's Selection" of Somali dishes, and a "Heritage" section telling that story.
+An elegant, single-page static website for Salama Eats Ltd, a halal Mediterranean grill located at 16773 71 St, Edmonton, AB. The design draws on Andalusian courtyard architecture (Moorish arches, geometric tile-inspired lattice texture) paired with Somali &amp; Arab hospitality — a black, gold and red palette, italic serif display type, a full-bleed framed hero with a script logotype, a sliding "Chef's Selection" of Somali dishes, and a "Heritage" section telling that story.
 
 ## Structure
 
 - `index.html` — page markup and content
 - `style.css` — all styling (black + gold/red, Cormorant Garamond + Jost)
 - `script.js` — nav, scroll reveal, signature-dish slider (arrows, dots, drag-to-scroll, autoplay), menu tabs, testimonial carousel, arch tilt, reservation form
+- `assets/fonts/` — self-hosted woff2 fonts (Great Vibes, Cormorant Garamond, Jost) — no external font requests
 - `assets/` — favicon and static assets
 - `assets/dishes/photos/` — the restaurant's dish photographs (used across the site)
 - `assets/dishes/` — fallback SVG illustrations for dishes that don't have a photo yet
