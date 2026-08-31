@@ -6,7 +6,7 @@ An elegant, single-page static website for Salama Eats Ltd, a halal Mediterranea
 
 - `index.html` — page markup and content
 - `style.css` — all styling (ivory/charcoal + terracotta/gold, Cormorant Garamond + Jost)
-- `script.js` — nav, scroll reveal, menu tabs, testimonial carousel, reservation form
+- `script.js` — nav, scroll reveal, signature-dish slider (arrows, dots, drag-to-scroll, autoplay), menu tabs, testimonial carousel, arch tilt, reservation form
 - `assets/` — favicon and static assets
 
 ## Running locally
@@ -22,7 +22,8 @@ or simply open `index.html` in a browser.
 ## Things to customize before launch
 
 - Replace placeholder phone number, email, and hours in the "Visit" section of `index.html`.
-- Swap the CSS gradient placeholders (`.arch-photo`, `.g-item`) for real photography — the Moorish arch frames (`.arch-frame`) are designed to crop a photo into a rounded-arch shape.
+- Swap the CSS gradient placeholders (`.arch-photo`, `.g-item`, `.dish-media`) for real photography — the Moorish arch frames (`.arch-frame`) are designed to crop a photo into a rounded-arch shape, and each dish card's `.dish-media` is sized for a vertical food photo.
+- Add or reorder dishes in the "Chef's Selection" slider by editing the `.dish-card` articles in `index.html` — the arrows, dots, and autoplay adapt to however many cards are present.
 - Confirm the exact city/province/postal code for 16773 71 St and update the address and embedded map accordingly.
 - Wire the reservation form (`#reserveForm` in `script.js`) to a real backend, email service, or reservation platform (e.g. OpenTable, Resy) — it currently only shows a confirmation message client-side.
 - Add real social links in the footer and "Visit" section.

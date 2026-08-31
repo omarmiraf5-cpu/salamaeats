@@ -85,6 +85,112 @@ document.addEventListener('DOMContentLoaded', () => {
     showTesti((testiIndex + 1) % testis.length);
   }, 6000);
 
+  // Signature dishes slider
+  const track = document.getElementById('dishTrack');
+  if (track) {
+    const cards = Array.from(track.children);
+    const prevBtn = document.getElementById('dishPrev');
+    const nextBtn = document.getElementById('dishNext');
+    const dotsWrap = document.getElementById('dishDots');
+    let autoplayTimer = null;
+
+    cards.forEach((_, i) => {
+      const dot = document.createElement('button');
+      if (i === 0) dot.classList.add('active');
+      dot.setAttribute('aria-label', `Go to dish ${i + 1}`);
+      dot.addEventListener('click', () => scrollToCard(i));
+      dotsWrap.appendChild(dot);
+    });
+
+    function cardStep() {
+      const style = getComputedStyle(track);
+      return cards[0].getBoundingClientRect().width + parseFloat(style.columnGap || style.gap || 28);
+    }
+    function scrollToCard(i) {
+      track.scrollTo({ left: cards[i].offsetLeft - track.offsetLeft, behavior: 'smooth' });
+    }
+    function nearestIndex() {
+      const pos = track.scrollLeft + track.offsetLeft;
+      let closest = 0;
+      let min = Infinity;
+      cards.forEach((c, i) => {
+        const d = Math.abs(c.offsetLeft - pos);
+        if (d < min) { min = d; closest = i; }
+      });
+      return closest;
+    }
+    function updateDots() {
+      const idx = nearestIndex();
+      dotsWrap.querySelectorAll('button').forEach((d, i) => d.classList.toggle('active', i === idx));
+      return idx;
+    }
+    prevBtn.addEventListener('click', () => { track.scrollBy({ left: -cardStep(), behavior: 'smooth' }); stopAutoplay(); });
+    nextBtn.addEventListener('click', () => { track.scrollBy({ left: cardStep(), behavior: 'smooth' }); stopAutoplay(); });
+
+    let scrollTicking = false;
+    track.addEventListener('scroll', () => {
+      if (!scrollTicking) {
+        requestAnimationFrame(() => { updateDots(); scrollTicking = false; });
+        scrollTicking = true;
+      }
+    }, { passive: true });
+
+    // Pointer drag-to-scroll
+    let isDown = false, startX = 0, startScroll = 0, moved = false;
+    track.addEventListener('pointerdown', (e) => {
+      isDown = true; moved = false;
+      startX = e.clientX; startScroll = track.scrollLeft;
+      track.classList.add('dragging');
+      stopAutoplay();
+    });
+    track.addEventListener('pointermove', (e) => {
+      if (!isDown) return;
+      const dx = e.clientX - startX;
+      if (Math.abs(dx) > 4) moved = true;
+      track.scrollLeft = startScroll - dx;
+    });
+    function endDrag() {
+      if (!isDown) return;
+      isDown = false;
+      track.classList.remove('dragging');
+      startAutoplay();
+    }
+    track.addEventListener('pointerup', endDrag);
+    track.addEventListener('pointerleave', endDrag);
+    track.addEventListener('click', (e) => { if (moved) e.preventDefault(); }, true);
+
+    function startAutoplay() {
+      stopAutoplay();
+      autoplayTimer = setInterval(() => {
+        const idx = nearestIndex();
+        const next = (idx + 1) % cards.length;
+        if (next === 0) track.scrollTo({ left: 0, behavior: 'smooth' });
+        else scrollToCard(next);
+      }, 4500);
+    }
+    function stopAutoplay() {
+      if (autoplayTimer) clearInterval(autoplayTimer);
+    }
+    track.addEventListener('mouseenter', stopAutoplay);
+    track.addEventListener('mouseleave', startAutoplay);
+    startAutoplay();
+  }
+
+  // Subtle arch photo tilt on mouse move
+  const heroArch = document.querySelector('.hero-arch');
+  const archFrame = heroArch ? heroArch.querySelector('.arch-frame') : null;
+  if (heroArch && archFrame && window.matchMedia('(hover: hover)').matches) {
+    heroArch.addEventListener('mousemove', (e) => {
+      const rect = heroArch.getBoundingClientRect();
+      const px = (e.clientX - rect.left) / rect.width - 0.5;
+      const py = (e.clientY - rect.top) / rect.height - 0.5;
+      archFrame.style.transform = `rotateY(${px * 8}deg) rotateX(${-py * 8}deg)`;
+    });
+    heroArch.addEventListener('mouseleave', () => {
+      archFrame.style.transform = 'rotateY(0deg) rotateX(0deg)';
+    });
+  }
+
   // Reservation form (front-end only — no backend wired up)
   const form = document.getElementById('reserveForm');
   const status = document.getElementById('formStatus');
