@@ -23,8 +23,9 @@ PHOTO_DIR = os.path.join(ROOT, "assets", "dishes", "photos")
 EXTS = ("jpg", "jpeg", "png", "webp", "avif")
 
 SLUGS = [
-    "bariis-iskukaris", "hilib-ari", "suqaar", "digaag-qumbe", "canjeero",
-    "sambusa", "malawah", "xalwo", "shaah", "muufo", "basbaas",
+    "salama-platter", "bariis-iskukaris", "hilib-ari", "digaag-shiilan",
+    "suqaar", "digaag-qumbe", "canjeero", "sambusa", "malawah", "xalwo",
+    "shaah", "muufo", "basbaas",
 ]
 
 

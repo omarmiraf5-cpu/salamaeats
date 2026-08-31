@@ -8,9 +8,8 @@ An elegant, single-page static website for Salama Eats Ltd, a halal Mediterranea
 - `style.css` — all styling (black + gold/red, Cormorant Garamond + Jost)
 - `script.js` — nav, scroll reveal, signature-dish slider (arrows, dots, drag-to-scroll, autoplay), menu tabs, testimonial carousel, arch tilt, reservation form
 - `assets/` — favicon and static assets
-- `assets/dishes/` — hand-built SVG illustrations of Somali dishes (bariis iskukaris, hilib ari, suqaar,
-  digaag qumbe, canjeero, sambusa, malawah, xalwo, shaah, muufo, basbaas), used by the dish slider,
-  the hero and heritage arches, and the gallery
+- `assets/dishes/photos/` — the restaurant's dish photographs (used across the site)
+- `assets/dishes/` — fallback SVG illustrations for dishes that don't have a photo yet
 
 ## Running locally
 
@@ -25,11 +24,10 @@ or simply open `index.html` in a browser.
 ## Things to customize before launch
 
 - Replace placeholder phone number, email, and hours in the "Visit" section of `index.html`.
-- **The dish images are vector illustrations, not photographs.** They are original artwork drawn to match
-  the site's palette, so there are no licensing constraints, but real photographs of your actual dishes
-  will always look better. Every image is now a plain `<img>` tag — drop a photo into `assets/dishes/`
-  and change the `src` (they are cropped with `object-fit: cover`, so any aspect ratio works).
-  Regenerate or tweak them with `tools/gen_dishes.py` (`python3 tools/gen_dishes.py`).
+- **The site now uses real photographs** (`assets/dishes/photos/`) for the hero, the heritage arch, the
+  Chef's Selection slider and the gallery: the Salama sharing platter, hilib ari, bariis iskukaris and
+  digaag shiilan. The original SVG illustrations remain in `assets/dishes/` as a fallback for dishes that
+  do not have a photo yet, and can be regenerated with `python3 tools/gen_dishes.py`.
 
   **To use real photographs:** drop them into `assets/dishes/photos/` named after the dish
   (`bariis-iskukaris.jpg`, `hilib-ari.jpg`, …) and run `python3 tools/use_photos.py`. Photos you
