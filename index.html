@@ -3,32 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Salama Eats Ltd | Halal Mediterranean Grill</title>
-<meta name="description" content="Salama Eats Ltd — a halal Mediterranean grill serving wood-fired kebabs, fresh mezze, and hand-carved shawarma. Visit us at 16773 71 St.">
+<title>Salama Eats Ltd | A Mediterranean &amp; Arabian Table</title>
+<meta name="description" content="Salama Eats Ltd — an elegant halal Mediterranean grill in Edmonton, where Andalusian charm meets Somali &amp; Arab hospitality. Wood-fired kebabs, fresh mezze, and hand-carved shawarma.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="preloader" id="preloader"><span class="preloader-mark">SALAMA</span></div>
+<div class="preloader" id="preloader">
+  <span class="preloader-mark">
+    <svg viewBox="0 0 60 60" class="preloader-star"><path d="M30 2 L36 24 L58 24 L40 37 L46 58 L30 45 L14 58 L20 37 L2 24 L24 24 Z"/></svg>
+  </span>
+</div>
 
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
-    <a href="#home" class="brand">SALAMA EATS</a>
+    <a href="#home" class="brand">
+      <span class="brand-mark">Salama</span>
+      <span class="brand-sub">EATS &middot; EST. EDMONTON</span>
+    </a>
     <nav class="main-nav" id="mainNav">
-      <a href="#about">Story</a>
+      <a href="#heritage">Heritage</a>
       <a href="#menu">Menu</a>
       <a href="#gallery">Gallery</a>
       <a href="#experience">Experience</a>
       <a href="#testimonials">Reviews</a>
       <a href="#visit">Visit</a>
     </nav>
-    <a href="#reserve" class="btn btn-line nav-cta">Reserve</a>
+    <a href="#reserve" class="btn btn-line nav-cta">Reserve a Table</a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span>
+      <span></span><span></span><span></span>
     </button>
   </div>
 </header>
@@ -36,58 +43,55 @@
 <main id="home">
 
   <section class="hero">
-    <div class="hero-grid">
-      <div class="hero-text" data-reveal>
-        <p class="tag">01 — Halal Mediterranean Grill</p>
-        <h1>GRILLED<br>WITH<br><span>PURPOSE.</span></h1>
-      </div>
-      <div class="hero-panel">
-        <div class="hero-photo"></div>
-        <div class="hero-note">
-          <p>Wood-fired kebabs, fresh mezze &amp; hand-carved shawarma — served in Edmonton since day one.</p>
-          <a href="#menu" class="hero-arrow" aria-label="See the menu">→</a>
-        </div>
-      </div>
-    </div>
-    <div class="hero-bottom">
-      <div class="container hero-bottom-inner">
-        <p class="hero-lede">Salama Eats Ltd is a 100% halal grill house built on Mediterranean tradition — bold flavor, honest ingredients, and a room designed to make people slow down.</p>
+    <div class="hero-pattern" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy" data-reveal>
+        <div class="ornament"><span></span><i></i><span></span></div>
+        <p class="eyebrow">A Mediterranean Table, an Arabian Welcome</p>
+        <h1>Salama Eats</h1>
+        <p class="hero-lede">Step through our arch into a room where whitewashed courtyards meet the warmth of Somali &amp; Arab hospitality — wood-fired kebabs, fresh mezze, and hand-carved shawarma, served the way old coastal cities have always welcomed their guests.</p>
         <div class="hero-actions">
-          <a href="#menu" class="btn btn-solid">View the Menu</a>
-          <a href="#visit" class="btn btn-line">Find Us</a>
+          <a href="#menu" class="btn btn-gold">Explore the Menu</a>
+          <a href="#reserve" class="btn btn-outline">Reserve Your Table</a>
+        </div>
+      </div>
+      <div class="hero-arch" data-reveal>
+        <div class="arch-frame">
+          <div class="arch-photo"></div>
+        </div>
+        <div class="hero-badge">
+          <strong>100%</strong>
+          <span>Halal &amp; Fresh Daily</span>
         </div>
       </div>
     </div>
+    <a href="#heritage" class="scroll-cue" aria-label="Scroll down"><span></span></a>
   </section>
 
   <section class="marquee">
     <div class="marquee-track">
-      <span>100% HALAL &nbsp;/&nbsp; WOOD-FIRED &nbsp;/&nbsp; FRESH DAILY MEZZE &nbsp;/&nbsp; HOUSE-MADE SAUCES &nbsp;/&nbsp; HAND-CARVED SHAWARMA &nbsp;/&nbsp; </span>
-      <span aria-hidden="true">100% HALAL &nbsp;/&nbsp; WOOD-FIRED &nbsp;/&nbsp; FRESH DAILY MEZZE &nbsp;/&nbsp; HOUSE-MADE SAUCES &nbsp;/&nbsp; HAND-CARVED SHAWARMA &nbsp;/&nbsp; </span>
+      <span>100% Halal &nbsp;✦&nbsp; Wood-Fired &nbsp;✦&nbsp; Fresh Daily Mezze &nbsp;✦&nbsp; House-Made Sauces &nbsp;✦&nbsp; Hand-Carved Shawarma &nbsp;✦&nbsp; </span>
+      <span aria-hidden="true">100% Halal &nbsp;✦&nbsp; Wood-Fired &nbsp;✦&nbsp; Fresh Daily Mezze &nbsp;✦&nbsp; House-Made Sauces &nbsp;✦&nbsp; Hand-Carved Shawarma &nbsp;✦&nbsp; </span>
     </div>
   </section>
 
-  <section class="stats">
-    <div class="container stats-grid">
-      <div data-reveal><strong>15+</strong><span>Years of Craft</span></div>
-      <div data-reveal><strong>40+</strong><span>Signature Dishes</span></div>
-      <div data-reveal><strong>100%</strong><span>Halal, Always</span></div>
-      <div data-reveal><strong>4.9</strong><span>Guest Rating</span></div>
-    </div>
-  </section>
-
-  <section class="about" id="about">
-    <div class="container about-grid">
-      <div class="about-media" data-reveal>
-        <div class="media-frame frame-a"></div>
-        <div class="media-frame frame-b"></div>
+  <section class="heritage" id="heritage">
+    <div class="hero-pattern dark" aria-hidden="true"></div>
+    <div class="container heritage-grid">
+      <div class="heritage-copy" data-reveal>
+        <div class="ornament light"><span></span><i></i><span></span></div>
+        <p class="eyebrow light">Our Heritage</p>
+        <h2>A Table Built Along the Trade Routes</h2>
+        <p>"Salama" carries the same meaning in Somali, Arabic, and Swahili — peace, safety, welcome. It's a word that has greeted travellers along coastal trade routes for centuries, from the shores of the Horn of Africa to the ports of Arabia and the Mediterranean.</p>
+        <p>We built this restaurant as a tribute to that shared table — Andalusian courtyards and citrus groves, Levantine mezze, and the generous, unhurried hospitality of Somali &amp; Arab tradition. Every dish carries a little of each.</p>
+        <div class="heritage-stats">
+          <div><strong>15+</strong><span>Years of Culinary Craft</span></div>
+          <div><strong>40+</strong><span>Signature Dishes</span></div>
+          <div><strong>4.9</strong><span>Guest Rating</span></div>
+        </div>
       </div>
-      <div class="about-copy" data-reveal>
-        <p class="tag">02 — Our Story</p>
-        <h2>The Mediterranean table, done our way.</h2>
-        <p>Salama Eats Ltd began with a simple belief: halal food deserves a serious table. Every dish is built on Mediterranean tradition — charcoal-grilled meats, house-blended spices, scratch-made hummus and tahini — plated with the precision of a modern kitchen.</p>
-        <p>"Salama" means peace and safety. It's the feeling we want every guest to leave with: nourished, unhurried, and cared for.</p>
-        <a href="#menu" class="text-link">See the full menu →</a>
+      <div class="heritage-media" data-reveal>
+        <div class="arch-frame small"><div class="arch-photo alt"></div></div>
       </div>
     </div>
   </section>
@@ -95,8 +99,10 @@
   <section class="menu" id="menu">
     <div class="container">
       <div class="section-head" data-reveal>
-        <p class="tag">03 — The Menu</p>
-        <h2>Built on Craft</h2>
+        <div class="ornament"><span></span><i></i><span></span></div>
+        <p class="eyebrow">Tasting Selections</p>
+        <h2>A Menu Worth the Journey</h2>
+        <p class="section-lede">A curated selection of our most-loved plates — Mediterranean tradition, Arabian spice, and the honest flavor of fire.</p>
       </div>
 
       <div class="menu-tabs" data-reveal>
@@ -129,7 +135,7 @@
           <li><div class="mi-head"><h3>Baklava</h3><span class="price">$8</span></div><p>Layered filo, pistachio, honey syrup.</p></li>
           <li><div class="mi-head"><h3>Knafeh</h3><span class="price">$11</span></div><p>Warm cheese pastry, crisp semolina, rose syrup.</p></li>
           <li><div class="mi-head"><h3>Mint Lemonade</h3><span class="price">$6</span></div><p>Fresh mint, lemon, lightly sparkling.</p></li>
-          <li><div class="mi-head"><h3>Turkish Coffee</h3><span class="price">$5</span></div><p>Slow-brewed, cardamom-spiced.</p></li>
+          <li><div class="mi-head"><h3>Somali Spiced Tea</h3><span class="price">$6</span></div><p>Shaah — black tea, cardamom, cinnamon, clove.</p></li>
         </ul>
       </div>
       <p class="menu-note" data-reveal>Full menu available in-house. Prices subject to seasonal change. Vegan &amp; allergen-friendly options available on request.</p>
@@ -137,31 +143,33 @@
   </section>
 
   <section class="experience" id="experience">
+    <div class="hero-pattern dark" aria-hidden="true"></div>
     <div class="container">
       <div class="section-head light" data-reveal>
-        <p class="tag">04 — The Experience</p>
+        <div class="ornament light"><span></span><i></i><span></span></div>
+        <p class="eyebrow light">The Experience</p>
         <h2>Every Detail, Considered</h2>
       </div>
       <div class="experience-grid">
         <div class="exp-card" data-reveal>
-          <span class="exp-num">01</span>
-          <h3>The Dining Room</h3>
-          <p>Warm lighting and considered interiors, built for lingering conversation.</p>
+          <span class="exp-icon">✦</span>
+          <h3>The Courtyard Room</h3>
+          <p>Arched doorways, warm lantern light, and hand-laid tile — a dining room built for lingering.</p>
         </div>
         <div class="exp-card" data-reveal>
-          <span class="exp-num">02</span>
+          <span class="exp-icon">✦</span>
           <h3>Private Events</h3>
-          <p>Book our space for celebrations, corporate dinners, and gatherings with a bespoke menu.</p>
+          <p>Host your celebration beneath our arches, with a bespoke menu for every occasion.</p>
         </div>
         <div class="exp-card" data-reveal>
-          <span class="exp-num">03</span>
+          <span class="exp-icon">✦</span>
           <h3>Order &amp; Catering</h3>
-          <p>Bring the Salama table to your home or office with full-service catering.</p>
+          <p>Bring the Salama table home with full-service catering and takeaway.</p>
         </div>
         <div class="exp-card" data-reveal>
-          <span class="exp-num">04</span>
-          <h3>Seasonal Menu</h3>
-          <p>A rotating chef's selection built around the best ingredients of the season.</p>
+          <span class="exp-icon">✦</span>
+          <h3>Seasonal Tasting</h3>
+          <p>A rotating chef's selection, built around the season's finest ingredients.</p>
         </div>
       </div>
     </div>
@@ -170,34 +178,37 @@
   <section class="gallery" id="gallery">
     <div class="container">
       <div class="section-head" data-reveal>
-        <p class="tag">05 — Gallery</p>
+        <div class="ornament"><span></span><i></i><span></span></div>
+        <p class="eyebrow">Gallery</p>
         <h2>A Feast for the Eyes</h2>
       </div>
       <div class="gallery-grid" data-reveal>
-        <div class="g-item g-1"></div>
+        <div class="g-item arch g-1"></div>
         <div class="g-item g-2"></div>
-        <div class="g-item g-3"></div>
+        <div class="g-item arch g-3"></div>
         <div class="g-item g-4"></div>
-        <div class="g-item g-5"></div>
+        <div class="g-item arch g-5"></div>
+        <div class="g-item g-6"></div>
       </div>
     </div>
   </section>
 
   <section class="testimonials" id="testimonials">
     <div class="container">
-      <p class="tag center" data-reveal>06 — Guest Reviews</p>
+      <div class="ornament center" data-reveal><span></span><i></i><span></span></div>
+      <p class="eyebrow center" data-reveal>Guest Reviews</p>
       <div class="testi-track" data-reveal>
         <blockquote class="testi active">
-          <p>“Hands down the most striking dining room in the city. The lamb shank melts in your mouth — worth every minute of the braise.”</p>
-          <cite>Amina R.</cite>
+          <p><span class="quote-mark">&ldquo;</span>Hands down the most beautiful dining room in the city. The lamb shank melts in your mouth — worth every minute of the braise.</p>
+          <cite>— Amina R.</cite>
         </blockquote>
         <blockquote class="testi">
-          <p>“Salama Eats feels like a warm hug. Impeccable service, gorgeous room, and food that tastes like home — just polished.”</p>
-          <cite>David K.</cite>
+          <p><span class="quote-mark">&ldquo;</span>Salama Eats feels like stepping into a riad. Impeccable service, gorgeous room, food that tastes like home — just polished.</p>
+          <cite>— David K.</cite>
         </blockquote>
         <blockquote class="testi">
-          <p>“We hosted our anniversary dinner here and it was flawless from start to finish. Already planning our next visit.”</p>
-          <cite>Farah &amp; James</cite>
+          <p><span class="quote-mark">&ldquo;</span>We hosted our anniversary dinner here and it was flawless from start to finish. Already planning our next visit.</p>
+          <cite>— Farah &amp; James</cite>
         </blockquote>
       </div>
       <div class="testi-dots" id="testiDots"></div>
@@ -205,10 +216,12 @@
   </section>
 
   <section class="reserve" id="reserve">
+    <div class="hero-pattern dark" aria-hidden="true"></div>
     <div class="container reserve-grid">
       <div class="reserve-copy" data-reveal>
-        <p class="tag">07 — Reservations</p>
-        <h2>Reserve<br>Your Table</h2>
+        <div class="ornament light"><span></span><i></i><span></span></div>
+        <p class="eyebrow light">Reservations</p>
+        <h2>Reserve Your Table</h2>
         <p>Whether it's a quiet dinner for two or a celebration for twenty, we'd love to host you. Our team will confirm your reservation shortly after you submit.</p>
         <ul class="reserve-list">
           <li>Open 7 days a week</li>
@@ -244,7 +257,7 @@
           <label for="notes">Special Requests</label>
           <textarea id="notes" name="notes" rows="3" placeholder="Allergies, occasions, seating preferences..."></textarea>
         </div>
-        <button type="submit" class="btn btn-solid btn-full">Request Reservation</button>
+        <button type="submit" class="btn btn-gold btn-full">Request Reservation</button>
         <p class="form-status" id="formStatus" role="status"></p>
       </form>
     </div>
@@ -253,7 +266,8 @@
   <section class="visit" id="visit">
     <div class="container visit-grid">
       <div class="visit-info" data-reveal>
-        <p class="tag">08 — Visit Us</p>
+        <div class="ornament"><span></span><i></i><span></span></div>
+        <p class="eyebrow">Visit Us</p>
         <h2>Salama Eats Ltd</h2>
         <address>
           16773 71 St<br>
@@ -292,17 +306,21 @@
 </main>
 
 <footer class="site-footer">
+  <div class="hero-pattern dark" aria-hidden="true"></div>
   <div class="container">
-    <a href="#home" class="footer-brand">SALAMA EATS</a>
+    <div class="ornament light"><span></span><i></i><span></span></div>
     <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark">Salama</span><span class="brand-sub">EATS</span>
+        <p>16773 71 St, Edmonton, AB &nbsp;·&nbsp; (780) 000-0000</p>
+      </div>
       <nav class="footer-nav">
-        <a href="#about">Story</a>
+        <a href="#heritage">Heritage</a>
         <a href="#menu">Menu</a>
         <a href="#gallery">Gallery</a>
         <a href="#reserve">Reservations</a>
         <a href="#visit">Visit</a>
       </nav>
-      <p class="footer-addr">16773 71 St, Edmonton, AB &nbsp;·&nbsp; (780) 000-0000</p>
     </div>
     <p class="footer-legal">&copy; <span id="year"></span> Salama Eats Ltd. All rights reserved.</p>
   </div>
