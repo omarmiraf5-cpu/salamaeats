@@ -28,15 +28,21 @@ or simply open `index.html` in a browser.
 
 - Replace placeholder phone number, email, and hours in the "Visit" section of `index.html`.
 - **The site now uses real photographs** (`assets/dishes/photos/`) for the hero, the heritage arch, the
-  Chef's Selection slider and the gallery: the Salaama sharing platter, hilib ari, bariis iskukaris and
-  digaag shiilan. The original SVG illustrations remain in `assets/dishes/` as a fallback for dishes that
-  do not have a photo yet, and can be regenerated with `python3 tools/gen_dishes.py`.
+  Chef's Selection slider and the gallery, captioned with real menu items (Rice & Meat Meal, Beef Shanks,
+  Haneeth, Lime Chicken). Note: the photo-to-dish pairing was my best guess by visual match, not confirmed
+  — double check the captions in `index.html` are actually correct for each photo. The original SVG
+  illustrations remain in `assets/dishes/` as a fallback for dishes without a photo yet, and can be
+  regenerated with `python3 tools/gen_dishes.py`.
 
-  **To use real photographs:** drop them into `assets/dishes/photos/` named after the dish
-  (`bariis-iskukaris.jpg`, `hilib-ari.jpg`, …) and run `python3 tools/use_photos.py`. Photos you
-  supply are wired into the slider, the hero and heritage arches, and the gallery automatically;
-  dishes without a photo keep their illustration, so you can add them a few at a time.
-  See `assets/dishes/photos/README.md` for the full name list and shooting notes.
+  **To add more real photographs:** drop them into `assets/dishes/photos/` (the file name only matters for
+  `tools/use_photos.py`'s automatic wiring — see that script and `assets/dishes/photos/README.md` for the
+  slug list) and either update `index.html` by hand or run `python3 tools/use_photos.py`.
+- **The menu (`#menu` in `index.html`) now reflects the real, physical menu boards**: Lunch & Dinner,
+  Salads, Dessert, Bubble Tea & Iced Coffee, and Coffee & Smoothies — 56 items total. Two things from the
+  photographed menu need the owner's confirmation: item 16 and item 20 are both listed as "Rice & Veggies"
+  but priced differently ($18 vs $21.60) with no distinguishing detail visible in the photo; and the menu
+  hero tagline ("Authentic Halal Somali & Mediterranean Grill") may no longer match this broader menu —
+  worth revisiting once the owner confirms the intended positioning.
 - The arch frames (`.arch-frame`) crop whatever image you give them into a rounded-arch shape, and each dish card's `.dish-media` is sized for a vertical food photo.
 - Add or reorder dishes in the "Chef's Selection" slider by editing the `.dish-card` articles in `index.html` — the arrows, dots, and autoplay adapt to however many cards are present.
 - Confirm the exact city/province/postal code for 16773 71 St and update the address and embedded map accordingly.
