@@ -6,6 +6,8 @@ An elegant, single-page static website for Salama Eats Ltd, a halal Mediterranea
 
 - `index.html` — page markup and content
 - `style.css` — all styling (black + gold/red, Cormorant Garamond + Jost)
+- `theme-light.css` — **alternate** bright "Tangerine" theme (cream + tangerine orange). It only
+  overrides `style.css`; remove its `<link>` from `index.html` to return to the dark site.
 - `script.js` — nav, scroll reveal, signature-dish slider (arrows, dots, drag-to-scroll, autoplay), menu tabs, testimonial carousel, arch tilt, reservation form
 - `assets/fonts/` — self-hosted woff2 fonts (Great Vibes, Cormorant Garamond, Jost) — no external font requests
 - `assets/` — favicon and static assets
