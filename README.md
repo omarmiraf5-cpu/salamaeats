@@ -11,7 +11,11 @@ An elegant, single-page static website for Salaama Eats Ltd, a halal Mediterrane
 - `script.js` — nav, scroll reveal, signature-dish slider (arrows, dots, drag-to-scroll, autoplay), menu tabs, testimonial carousel, arch tilt, reservation form
 - `assets/fonts/` — self-hosted woff2 fonts (Great Vibes, Cormorant Garamond, Jost) — no external font requests
 - `assets/` — favicon and static assets
-- `assets/dishes/photos/` — the restaurant's dish photographs (used across the site)
+- `assets/dishes/photos/` — 4 real customer/owner-submitted photos, used for the hero, heritage arch,
+  gallery and Chef's Selection slider
+- `assets/dishes/menu/` — small thumbnails for every menu-list item (56 of them), cropped from the 5
+  physical menu-board photos the owner sent and lightly trimmed to remove background margin. See
+  `tools/crop_menu_boards.py` for how these were made if the boards are re-shot and need re-cropping.
 - `assets/dishes/` — fallback SVG illustrations for dishes that don't have a photo yet
 
 ## Running locally
