@@ -63,28 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Testimonials carousel
-  const testis = document.querySelectorAll('.testi');
-  const dotsWrap = document.getElementById('testiDots');
-  let testiIndex = 0;
-  testis.forEach((_, i) => {
-    const dot = document.createElement('button');
-    if (i === 0) dot.classList.add('active');
-    dot.setAttribute('aria-label', `Show testimonial ${i + 1}`);
-    dot.addEventListener('click', () => showTesti(i));
-    dotsWrap.appendChild(dot);
-  });
-  function showTesti(i) {
-    testis.forEach(t => t.classList.remove('active'));
-    dotsWrap.querySelectorAll('button').forEach(d => d.classList.remove('active'));
-    testis[i].classList.add('active');
-    dotsWrap.children[i].classList.add('active');
-    testiIndex = i;
-  }
-  setInterval(() => {
-    showTesti((testiIndex + 1) % testis.length);
-  }, 6000);
-
   // Signature dishes slider
   const track = document.getElementById('dishTrack');
   if (track) {
