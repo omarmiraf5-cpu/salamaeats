@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate elegant SVG illustrations of Somali dishes for Salama Eats.
+"""Generate elegant SVG illustrations of Somali dishes for Salaama Eats.
 
 Style: dark ceramic plate on near-black ground, gold rim, warm food tones —
 matching the site's black / gold / red palette.

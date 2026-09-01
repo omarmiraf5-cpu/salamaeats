@@ -1,6 +1,6 @@
-# Salama Eats Ltd — Website
+# Salaama Eats Ltd — Website
 
-An elegant, single-page static website for Salama Eats Ltd, a halal Mediterranean grill located at 16773 71 St, Edmonton, AB. The design draws on Andalusian courtyard architecture (Moorish arches, geometric tile-inspired lattice texture) paired with Somali &amp; Arab hospitality — a black, gold and red palette, italic serif display type, a full-bleed framed hero with a script logotype, a sliding "Chef's Selection" of Somali dishes, and a "Heritage" section telling that story.
+An elegant, single-page static website for Salaama Eats Ltd, a halal Mediterranean grill located at 16773 71 St, Edmonton, AB. The design draws on Andalusian courtyard architecture (Moorish arches, geometric tile-inspired lattice texture) paired with Somali &amp; Arab hospitality — a black, gold and red palette, italic serif display type, a full-bleed framed hero with a script logotype, a sliding "Chef's Selection" of Somali dishes, and a "Heritage" section telling that story.
 
 ## Structure
 
@@ -28,7 +28,7 @@ or simply open `index.html` in a browser.
 
 - Replace placeholder phone number, email, and hours in the "Visit" section of `index.html`.
 - **The site now uses real photographs** (`assets/dishes/photos/`) for the hero, the heritage arch, the
-  Chef's Selection slider and the gallery: the Salama sharing platter, hilib ari, bariis iskukaris and
+  Chef's Selection slider and the gallery: the Salaama sharing platter, hilib ari, bariis iskukaris and
   digaag shiilan. The original SVG illustrations remain in `assets/dishes/` as a fallback for dishes that
   do not have a photo yet, and can be regenerated with `python3 tools/gen_dishes.py`.
 

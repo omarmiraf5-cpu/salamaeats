@@ -1,4 +1,4 @@
-// Salama Eats Ltd — site interactions
+// Salaama Eats Ltd — site interactions
 
 document.addEventListener('DOMContentLoaded', () => {
   // Preloader
