@@ -12,6 +12,10 @@
   font-weight: 500; font-style: italic; font-display: swap; }
 @font-face { font-family: 'Cormorant Garamond'; src: url('assets/fonts/cormorant-garamond-latin-600-italic.woff2') format('woff2');
   font-weight: 600; font-style: italic; font-display: swap; }
+@font-face { font-family: 'Cormorant Garamond'; src: url('assets/fonts/cormorant-garamond-latin-700-normal.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Cormorant Garamond'; src: url('assets/fonts/cormorant-garamond-latin-700-italic.woff2') format('woff2');
+  font-weight: 700; font-style: italic; font-display: swap; }
 
 @font-face { font-family: 'Jost'; src: url('assets/fonts/jost-latin-300-normal.woff2') format('woff2');
   font-weight: 300; font-style: normal; font-display: swap; }
@@ -376,7 +380,7 @@ section { padding: 120px 0; position: relative; }
 .menu-panel.active { display: grid; }
 .menu-panel li { padding: 24px 0; border-bottom: 1px solid var(--line); }
 .mi-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 6px; }
-.mi-head h3 { font-size: 1.2rem; font-style: italic; }
+.mi-head h3 { font-size: 1.2rem; font-style: italic; font-weight: 700; }
 .price { font-family: var(--ff-head); color: var(--red); font-weight: 700; font-size: 1.1rem; white-space: nowrap; }
 .menu-panel li p { color: var(--muted); font-size: 0.92rem; }
 .menu-note { text-align: center; margin-top: 44px; color: var(--muted); font-size: 0.85rem; }
