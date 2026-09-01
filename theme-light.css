@@ -130,7 +130,6 @@
 
 /* ---------- small accent text needs a deeper tangerine on cream ---------- */
 .dish-num { color: var(--accent-deep); }
-.footer-brand .brand-sub { color: var(--accent-deep); }
 .price { color: var(--red); }
 
 /* ---------- odds and ends ---------- */

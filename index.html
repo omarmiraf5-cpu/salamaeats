@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Salaama Eats Ltd | Halal Grill, Bubble Tea &amp; Desserts</title>
 <meta name="description" content="Salaama Eats Ltd — a halal grill, bubble tea and dessert cafe in Edmonton. Ribs, shanks, chops and grilled chicken, fresh smoothies and coffee, and house-made desserts.">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="assets/favicon-512.png" sizes="512x512" type="image/png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
 <link rel="preload" href="assets/fonts/great-vibes-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/cormorant-garamond-latin-600-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
@@ -15,16 +17,17 @@
 <body>
 
 <div class="preloader" id="preloader">
-  <span class="preloader-mark">
-    <svg viewBox="0 0 60 60" class="preloader-star"><path d="M30 2 L36 24 L58 24 L40 37 L46 58 L30 45 L14 58 L20 37 L2 24 L24 24 Z"/></svg>
-  </span>
+  <img class="preloader-mark" src="assets/logo-mark.webp" alt="" width="60" height="60">
 </div>
 
 <header class="site-header" id="siteHeader">
   <div class="container header-inner">
     <a href="#home" class="brand">
-      <span class="brand-mark">Salaama Eats</span>
-      <span class="brand-sub">EST. EDMONTON</span>
+      <img class="brand-logo" src="assets/logo-mark.webp" alt="" width="44" height="44" loading="eager">
+      <span class="brand-text">
+        <span class="brand-mark">Salaama Eats</span>
+        <span class="brand-sub">EST. EDMONTON</span>
+      </span>
     </a>
     <nav class="main-nav" id="mainNav">
       <a href="#heritage">About</a>
@@ -50,7 +53,7 @@
 
       <nav class="hero-nav">
         <a href="#home" class="hero-logo">
-          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3 L19 12 L29 12 L21 18 L24 28 L16 22 L8 28 L11 18 L3 12 L13 12 Z"/></svg>
+          <img src="assets/logo-mark.webp" alt="" width="26" height="26" loading="eager">
           <span>Salaama Eats</span>
         </a>
         <div class="hero-nav-right">
@@ -405,7 +408,7 @@
     <div class="ornament light"><span></span><i></i><span></span></div>
     <div class="footer-inner">
       <div class="footer-brand">
-        <span class="brand-mark">Salaama Eats</span><span class="brand-sub">EST. EDMONTON</span>
+        <img class="footer-logo" src="assets/logo-full.webp" alt="Salaama Eats — Mediterranean Grill" width="160" height="165" loading="lazy">
         <p>16773 71 St, Edmonton, AB &nbsp;·&nbsp; (780) 000-0000</p>
       </div>
       <nav class="footer-nav">

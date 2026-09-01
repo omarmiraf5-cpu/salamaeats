@@ -131,15 +131,23 @@ BOARD_CROPS = {
 }
 
 
-def trim_dark_border(im, thresh=55, max_bright_px=2):
+def trim_dark_border(im, mean_thresh=16, pad=0):
     """Trim rows/cols that are essentially pure black background — a
-    column only counts as background if it has almost no bright pixels
-    anywhere along it, so it won't eat into the actual food/drink."""
-    arr = np.array(im.convert("L"))
+    column only counts as background if its *average* brightness is
+    still near-black, so a single stray highlight can't save it.
+
+    pad defaults to 0 on purpose: padding back in a couple of "safety"
+    pixels sounds harmless, but at the crop boundary those pixels are
+    frequently still part of the black background (the transition from
+    background to content is often a hard 1-2px edge, not a gradient),
+    which reintroduces the exact black sliver this function exists to
+    remove. If a future crop shows anti-aliasing fringe, prefer widening
+    the crop box in BOARD_CROPS over adding padding here.
+    """
+    arr = np.array(im.convert("L")).astype(np.float32)
     h, w = arr.shape
-    bright = arr > thresh
-    col_bg = bright.sum(axis=0) <= max_bright_px
-    row_bg = bright.sum(axis=1) <= max_bright_px
+    col_bg = arr.mean(axis=0) < mean_thresh
+    row_bg = arr.mean(axis=1) < mean_thresh
 
     def first_last_false(mask):
         idx = np.where(~mask)[0]
@@ -147,7 +155,6 @@ def trim_dark_border(im, thresh=55, max_bright_px=2):
 
     x0, x1 = first_last_false(col_bg)
     y0, y1 = first_last_false(row_bg)
-    pad = 2
     x0, y0 = max(0, x0 - pad), max(0, y0 - pad)
     x1, y1 = min(w, x1 + pad), min(h, y1 + pad)
     if x1 - x0 < 15 or y1 - y0 < 15:

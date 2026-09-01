@@ -10,11 +10,15 @@ An elegant, single-page static website for Salaama Eats Ltd, a halal Mediterrane
   overrides `style.css`; remove its `<link>` from `index.html` to return to the dark site.
 - `script.js` — nav, scroll reveal, signature-dish slider (arrows, dots, drag-to-scroll, autoplay), menu tabs, testimonial carousel, arch tilt, reservation form
 - `assets/fonts/` — self-hosted woff2 fonts (Great Vibes, Cormorant Garamond, Jost) — no external font requests
-- `assets/` — favicon and static assets
+- `assets/logo-mark.webp` / `assets/logo-full.webp` — the owner's real logo (chef-hat/flame emblem, and the
+  full lockup with "Salaama Eats Mediterranean Grill"), background keyed to transparent so it drops onto
+  both the light header and the dark footer. Used in the header, the in-hero nav, the footer, and the
+  preloader. `assets/favicon-{32,180,512}.png` are cropped from the same source. See
+  `tools/process_logo.py` and `assets/branding/logo-source.jpg` to regenerate these from a new logo photo.
 - `assets/dishes/photos/` — 4 real customer/owner-submitted photos, used for the hero, heritage arch,
   gallery and Chef's Selection slider
 - `assets/dishes/menu/` — small thumbnails for every menu-list item (56 of them), cropped from the 5
-  physical menu-board photos the owner sent and lightly trimmed to remove background margin. See
+  physical menu-board photos the owner sent and trimmed to remove background margin. See
   `tools/crop_menu_boards.py` for how these were made if the boards are re-shot and need re-cropping.
 - `assets/dishes/` — fallback SVG illustrations for dishes that don't have a photo yet
 
@@ -42,11 +46,10 @@ or simply open `index.html` in a browser.
   `tools/use_photos.py`'s automatic wiring — see that script and `assets/dishes/photos/README.md` for the
   slug list) and either update `index.html` by hand or run `python3 tools/use_photos.py`.
 - **The menu (`#menu` in `index.html`) now reflects the real, physical menu boards**: Lunch & Dinner,
-  Salads, Dessert, Bubble Tea & Iced Coffee, and Coffee & Smoothies — 56 items total. Two things from the
-  photographed menu need the owner's confirmation: item 16 and item 20 are both listed as "Rice & Veggies"
-  but priced differently ($18 vs $21.60) with no distinguishing detail visible in the photo; and the menu
-  hero tagline ("Authentic Halal Somali & Mediterranean Grill") may no longer match this broader menu —
-  worth revisiting once the owner confirms the intended positioning.
+  Salads, Dessert, Bubble Tea & Iced Coffee, and Coffee & Smoothies — 56 items total, each with a real
+  photo thumbnail. One thing from the photographed menu still needs the owner's confirmation: item 16 and
+  item 20 are both listed as "Rice & Veggies" but priced differently ($18 vs $21.60) with no distinguishing
+  detail visible in the photo.
 - The arch frames (`.arch-frame`) crop whatever image you give them into a rounded-arch shape, and each dish card's `.dish-media` is sized for a vertical food photo.
 - Add or reorder dishes in the "Chef's Selection" slider by editing the `.dish-card` articles in `index.html` — the arrows, dots, and autoplay adapt to however many cards are present.
 - Confirm the exact city/province/postal code for 16773 71 St and update the address and embedded map accordingly.
