@@ -11,8 +11,8 @@
 <link rel="preload" href="assets/fonts/great-vibes-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/cormorant-garamond-latin-600-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
-<!-- ALTERNATE "Tangerine" accent theme (black background, tangerine-orange accent). Delete this line to return to the original muted gold/red accent. -->
-<link rel="stylesheet" href="theme-tangerine.css">
+<!-- ALTERNATE "Tangerine" light theme. Delete this line to return to the black/gold/red site. -->
+<link rel="stylesheet" href="theme-light.css">
 </head>
 <body>
 
@@ -182,7 +182,8 @@
       </div>
 
       <div class="menu-tabs" data-reveal>
-        <button class="tab-btn active" data-tab="lunch-dinner">Lunch &amp; Dinner</button>
+        <button class="tab-btn active" data-tab="breakfast">Breakfast</button>
+        <button class="tab-btn" data-tab="lunch-dinner">Lunch &amp; Dinner</button>
         <button class="tab-btn" data-tab="salads">Salads</button>
         <button class="tab-btn" data-tab="dessert">Dessert</button>
         <button class="tab-btn" data-tab="bubble-tea">Bubble Tea &amp; Iced Coffee</button>
@@ -190,7 +191,21 @@
       </div>
 
       <div class="menu-panels">
-        <ul class="menu-panel active" data-panel="lunch-dinner">
+        <ul class="menu-panel active" data-panel="breakfast">
+          <li class="mi-row"><img class="mi-thumb" src="assets/dishes/menu/eggs-avocado-tomato.webp" alt="Eggs and Avocado with Tomatoes" loading="lazy" width="80" height="80"><div class="mi-content"><div class="mi-head"><h3>Eggs and Avocado with Tomatoes</h3><span class="price">$13.50</span></div></div></li>
+          <li class="mi-row"><img class="mi-thumb" src="assets/dishes/menu/goat-liver-injera.webp" alt="Goat Liver with Injera" loading="lazy" width="80" height="80"><div class="mi-content"><div class="mi-head"><h3>Goat Liver with Injera</h3><span class="price">$14.70</span></div></div></li>
+          <li class="mi-row"><img class="mi-thumb" src="assets/dishes/menu/fruit-bowl-eggs.webp" alt="Fruit Bowl with Eggs" loading="lazy" width="80" height="80"><div class="mi-content"><div class="mi-head"><h3>Fruit Bowl with Eggs</h3><span class="price">$13.25</span></div></div></li>
+          <li class="mi-row"><img class="mi-thumb" src="assets/dishes/menu/egg-cheese-tomato.webp" alt="Egg and Cheese with Tomatoes" loading="lazy" width="80" height="80"><div class="mi-content"><div class="mi-head"><h3>Egg and Cheese with Tomatoes</h3><span class="price">$13.99</span></div></div></li>
+          <li class="mi-row"><img class="mi-thumb" src="assets/dishes/menu/yogurt-berries.webp" alt="Yogurt and Berries" loading="lazy" width="80" height="80"><div class="mi-content"><div class="mi-head"><h3>Yogurt and Berries</h3><span class="price">$14.99</span></div></div></li>
+          <li class="mi-row"><img class="mi-thumb" src="assets/dishes/menu/fruit-bowl.webp" alt="Fruit Bowl" loading="lazy" width="80" height="80"><div class="mi-content"><div class="mi-head"><h3>Fruit Bowl</h3><span class="price">$14.99</span></div></div></li>
+          <li class="mi-row"><img class="mi-thumb" src="assets/dishes/menu/grilled-cheese-lentil-soup.webp" alt="Grilled Cheese with Lentil Soup" loading="lazy" width="80" height="80"><div class="mi-content"><div class="mi-head"><h3>Grilled Cheese with Lentil Soup</h3><span class="price">$12.25</span></div></div></li>
+          <li class="mi-row"><img class="mi-thumb" src="assets/dishes/menu/chapati.webp" alt="Chapati" loading="lazy" width="80" height="80"><div class="mi-content"><div class="mi-head"><h3>Chapati</h3><span class="price">$13.50</span></div></div></li>
+          <li class="mi-row"><img class="mi-thumb" src="assets/dishes/menu/crepe-strawberries.webp" alt="Crepe with Strawberries" loading="lazy" width="80" height="80"><div class="mi-content"><div class="mi-head"><h3>Crepe with Strawberries</h3><span class="price">$13.50</span></div></div></li>
+          <li class="mi-row"><img class="mi-thumb" src="assets/dishes/menu/pancakes-strawberries.webp" alt="Pancakes with Strawberries" loading="lazy" width="80" height="80"><div class="mi-content"><div class="mi-head"><h3>Pancakes with Strawberries</h3><span class="price">$12.99</span></div></div></li>
+          <li class="mi-row"><img class="mi-thumb" src="assets/dishes/menu/crepe-raspberries.webp" alt="Crepe with Raspberries" loading="lazy" width="80" height="80"><div class="mi-content"><div class="mi-head"><h3>Crepe with Raspberries</h3><span class="price">$14.99</span></div></div></li>
+          <li class="mi-row"><img class="mi-thumb" src="assets/dishes/menu/waffles-berries.webp" alt="Waffles with Berries" loading="lazy" width="80" height="80"><div class="mi-content"><div class="mi-head"><h3>Waffles with Berries</h3><span class="price">$13.99</span></div></div></li>
+        </ul>
+        <ul class="menu-panel" data-panel="lunch-dinner">
           <li class="mi-row"><img class="mi-thumb" src="assets/dishes/menu/ribs-6pc.webp" alt="Ribs (6 pc)" loading="lazy" width="80" height="80"><div class="mi-content"><div class="mi-head"><h3>Ribs (6 pc)</h3><span class="price">$17.30</span></div></div></li>
           <li class="mi-row"><img class="mi-thumb" src="assets/dishes/menu/beef-shanks.webp" alt="Beef Shanks" loading="lazy" width="80" height="80"><div class="mi-content"><div class="mi-head"><h3>Beef Shanks</h3><span class="price">$16.99</span></div></div></li>
           <li class="mi-row"><img class="mi-thumb" src="assets/dishes/menu/lamb-chops.webp" alt="Lamb Chops" loading="lazy" width="80" height="80"><div class="mi-content"><div class="mi-head"><h3>Lamb Chops</h3><span class="price">$17</span></div></div></li>

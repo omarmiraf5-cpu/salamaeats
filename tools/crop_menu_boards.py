@@ -128,6 +128,20 @@ BOARD_CROPS = {
         "mixed-veggie-salad": (428, 1355, 617, 1552),
         "green-salad": (728, 1350, 867, 1552),
     },
+    "board6.jpg": {  # Breakfast
+        "eggs-avocado-tomato": (539, 215, 720, 420),
+        "goat-liver-injera": (778, 215, 947, 424),
+        "fruit-bowl-eggs": (561, 463, 695, 636),
+        "egg-cheese-tomato": (771, 438, 913, 645),
+        "yogurt-berries": (555, 670, 705, 843),
+        "fruit-bowl": (766, 684, 937, 856),
+        "grilled-cheese-lentil-soup": (555, 867, 723, 1036),
+        "chapati": (776, 862, 903, 1078),
+        "crepe-strawberries": (554, 1073, 684, 1251),
+        "pancakes-strawberries": (758, 1096, 891, 1290),
+        "crepe-raspberries": (551, 1288, 684, 1452),
+        "waffles-berries": (756, 1303, 898, 1486),
+    },
 }
 
 
