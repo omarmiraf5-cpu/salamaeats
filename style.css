@@ -326,16 +326,25 @@ section { padding: 120px 0; position: relative; }
 /* ---------- Showcase slider ---------- */
 .showcase { background: var(--charcoal); overflow: hidden; padding-bottom: 70px; }
 .showcase .section-head { margin-bottom: 54px; }
-.showcase-slider { position: relative; display: flex; align-items: center; gap: 10px; max-width: 1500px; margin: 0 auto; padding: 0 14px; }
-.slider-track {
-  display: flex; gap: 28px; overflow-x: auto; scroll-snap-type: x proximity;
-  scroll-behavior: smooth; padding: 6px 6px 30px; cursor: grab;
-  scrollbar-width: none; -ms-overflow-style: none;
-  touch-action: pan-x pinch-zoom; -webkit-overflow-scrolling: touch;
+.showcase-slider {
+  position: relative; max-width: 100%; margin: 0 auto; overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
-.slider-track::-webkit-scrollbar { display: none; }
-.slider-track.dragging { cursor: grabbing; scroll-snap-type: none; }
-.dish-card { flex: 0 0 370px; scroll-snap-align: start; user-select: none; }
+/* Continuous auto-scrolling showcase — the track holds the 4 dishes twice
+   back to back, and the animation slides exactly one set's width (-50%)
+   in a straight line, so it loops with no visible seam or reset. */
+.slider-track {
+  display: flex; gap: 28px; width: max-content; padding: 6px 6px 30px;
+  animation: showcaseScroll 32s linear infinite;
+}
+.showcase-slider:hover .slider-track,
+.slider-track:focus-within { animation-play-state: paused; }
+@keyframes showcaseScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.dish-card { flex: 0 0 370px; user-select: none; }
 .dish-media {
   display: block; width: 100%; height: 440px; object-fit: cover; object-position: center 50%;
   border-radius: var(--radius); border: 1px solid var(--line-light);
@@ -349,17 +358,9 @@ section { padding: 120px 0; position: relative; }
 .dish-info h3 { font-size: 1.3rem; font-style: italic; margin: 8px 0 8px; }
 .dish-info p { color: var(--muted); font-size: 0.88rem; margin-bottom: 12px; min-height: 2.6em; }
 .dish-price { font-family: var(--ff-head); color: var(--red); font-weight: 700; font-size: 1.15rem; }
-.slider-arrow {
-  flex-shrink: 0; width: 52px; height: 52px; border-radius: 50%;
-  border: 1px solid var(--gold); background: transparent; color: var(--gold);
-  font-size: 1.7rem; line-height: 1; cursor: pointer; z-index: 2;
-  display: flex; align-items: center; justify-content: center;
-  transition: all 0.3s var(--ease); margin: 0 4px;
+@media (prefers-reduced-motion: reduce) {
+  .slider-track { animation: none; }
 }
-.slider-arrow:hover { background: var(--gold); color: var(--charcoal); }
-.slider-dots { display: flex; justify-content: center; gap: 8px; margin-top: 26px; }
-.slider-dots button { width: 8px; height: 8px; border-radius: 50%; border: none; background: var(--line); cursor: pointer; transition: all 0.3s; }
-.slider-dots button.active { background: var(--gold); width: 24px; border-radius: 4px; }
 
 /* ---------- Heritage ---------- */
 .heritage { background: var(--charcoal); color: var(--ink); overflow: hidden; }
@@ -553,12 +554,10 @@ section { padding: 120px 0; position: relative; }
   .hero-actions .btn { width: auto; padding: 13px 24px; font-size: 0.72rem; }
   .experience-grid, .gallery-grid { grid-template-columns: 1fr; }
   .g-item.arch { grid-row: span 1; }
-  .showcase-slider { gap: 8px; }
   .slider-track { padding: 6px 10px 26px; gap: 18px; }
   .dish-card { flex-basis: 240px; }
   .dish-media { height: 300px; }
   .gallery-grid { grid-auto-rows: 340px; }
-  .slider-arrow { width: 40px; height: 40px; font-size: 1.3rem; }
   .footer-inner { flex-direction: column; text-align: center; }
   .footer-nav { justify-content: center; }
   .footer-legal { padding-bottom: 60px; }

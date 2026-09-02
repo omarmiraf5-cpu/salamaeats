@@ -107,7 +107,6 @@
       </div>
     </div>
     <div class="showcase-slider">
-      <button class="slider-arrow prev" id="dishPrev" aria-label="Previous dish">&#8249;</button>
       <div class="slider-track" id="dishTrack">
         <article class="dish-card" data-reveal>
           <img class="dish-media" src="assets/dishes/photos/salama-platter.webp" alt="Rice and meat family platter with grilled chicken, rice, salad, chapati and banana" loading="lazy">
@@ -145,10 +144,46 @@
             <span class="dish-price">$19</span>
           </div>
         </article>
+        <!-- duplicate set, hidden from assistive tech — lets the CSS marquee
+             loop seamlessly at translateX(-50%) instead of snapping back -->
+        <article class="dish-card" aria-hidden="true">
+          <img class="dish-media" src="assets/dishes/photos/salama-platter.webp" alt="" loading="lazy">
+          <div class="dish-info">
+            <span class="dish-num">01</span>
+            <h3>Rice &amp; Meat Meal</h3>
+            <p>Family size. Rice, grilled meat and chicken, salad, chapati and banana.</p>
+            <span class="dish-price">$45</span>
+          </div>
+        </article>
+        <article class="dish-card" aria-hidden="true">
+          <img class="dish-media" src="assets/dishes/photos/hilib-ari.webp" alt="" loading="lazy">
+          <div class="dish-info">
+            <span class="dish-num">02</span>
+            <h3>Beef Shanks</h3>
+            <p>Slow-cooked beef shank, served on rice.</p>
+            <span class="dish-price">$16.99</span>
+          </div>
+        </article>
+        <article class="dish-card" aria-hidden="true">
+          <img class="dish-media" src="assets/dishes/photos/bariis-iskukaris.webp" alt="" loading="lazy">
+          <div class="dish-info">
+            <span class="dish-num">03</span>
+            <h3>Haneeth</h3>
+            <p>Slow-roasted, served with spiced rice, raisins and salad.</p>
+            <span class="dish-price">$18</span>
+          </div>
+        </article>
+        <article class="dish-card" aria-hidden="true">
+          <img class="dish-media" src="assets/dishes/photos/digaag-shiilan.webp" alt="" loading="lazy">
+          <div class="dish-info">
+            <span class="dish-num">04</span>
+            <h3>Lime Chicken</h3>
+            <p>Marinated grilled chicken, house salad and lime.</p>
+            <span class="dish-price">$19</span>
+          </div>
+        </article>
       </div>
-      <button class="slider-arrow next" id="dishNext" aria-label="Next dish">&#8250;</button>
     </div>
-    <div class="slider-dots" id="dishDots"></div>
   </section>
 
   <section class="heritage" id="heritage">

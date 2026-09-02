@@ -134,15 +134,11 @@
 /* ---------- odds and ends ---------- */
 .testi-dots button { background: rgba(36, 29, 21, 0.18); }
 .testi-dots button.active { background: var(--red); }
-.slider-dots button { background: rgba(36, 29, 21, 0.18); }
-.slider-dots button.active { background: var(--gold); }
 .exp-card { border-color: var(--line); }
 .exp-card:hover { border-color: var(--gold); }
 .menu-panel li { border-bottom-color: var(--line); }
 .heritage-stats { border-top-color: var(--line); }
 .reserve-list li { border-bottom-color: var(--line); }
-.slider-arrow { border-color: var(--gold); color: var(--gold); }
-.slider-arrow:hover { background: var(--gold); color: #fff; }
 .btn-gold { color: #3b2408; }
 .tab-btn.active { color: #3b2408; }
 .fab { color: #3b2408; }
