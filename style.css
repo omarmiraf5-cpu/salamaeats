@@ -388,22 +388,12 @@ section { padding: 120px 0; position: relative; }
   display: flex; align-items: center; gap: 16px;
   padding: 14px 0; border-bottom: 1px solid var(--line);
 }
+/* Every thumbnail fills its rounded square edge to edge. object-fit:cover
+   keeps each photo's aspect ratio and crops the overflow, so nothing is
+   stretched and there's no empty space inside the frame. */
 .mi-thumb {
   width: 80px; height: 80px; flex-shrink: 0; border-radius: 10px;
   object-fit: cover; box-shadow: 0 4px 14px rgba(0,0,0,0.25);
-}
-/* Drinks are shot as tall cups and glasses, so they can't fill a square
-   frame without either distorting or cropping the rim and boba away.
-   Show the whole drink at its true proportions, centered on its own
-   tile with a little breathing room — the tile (not the photo) is what
-   keeps the column even, so a slim bubble tea and a wide mug can sit in
-   the same list without either one looking squashed. */
-.mi-thumb--fit {
-  object-fit: contain;
-  padding: 5px;
-  background: var(--charcoal-2);
-  border: 1px solid var(--line);
-  box-shadow: none;
 }
 .mi-content { flex: 1; min-width: 0; }
 .mi-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 6px; }
