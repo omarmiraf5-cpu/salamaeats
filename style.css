@@ -256,21 +256,21 @@ h1, h2, h3, h4 {
   text-align: center; padding: 0 24px;
 }
 .hero-mark {
-  width: clamp(56px, 8vw, 84px); height: clamp(56px, 8vw, 84px); object-fit: contain;
-  margin-bottom: 10px; filter: drop-shadow(0 6px 24px rgba(0,0,0,0.5));
-}
-.hero-cuisine {
-  font-family: var(--ff-head); font-style: italic; font-weight: 600;
-  font-size: clamp(0.85rem, 1.6vw, 1.15rem); letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--ink); text-shadow: 0 2px 14px rgba(0,0,0,0.7);
-  margin: 0 0 4px;
+  width: clamp(72px, 10vw, 110px); height: clamp(72px, 10vw, 110px); object-fit: contain;
+  margin-bottom: 14px; filter: drop-shadow(0 6px 24px rgba(0,0,0,0.5));
 }
 .hero-script {
   font-family: 'Great Vibes', 'Snell Roundhand', 'Brush Script MT', cursive;
   font-weight: 400; font-style: normal;
   font-size: clamp(3.6rem, 11vw, 8rem); line-height: 1;
   color: var(--ink); text-shadow: 0 6px 40px rgba(0,0,0,0.6);
-  margin-bottom: 18px;
+  margin-bottom: 8px;
+}
+.hero-cuisine {
+  font-family: var(--ff-head); font-style: italic; font-weight: 600;
+  font-size: clamp(0.85rem, 1.6vw, 1.15rem); letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink); text-shadow: 0 2px 14px rgba(0,0,0,0.7);
+  margin: 0 0 18px;
 }
 .hero-tagline {
   font-size: clamp(0.72rem, 1.3vw, 0.86rem); letter-spacing: 0.26em; text-transform: uppercase;
