@@ -36,6 +36,9 @@
   --ink: #f3e9d8;
   --charcoal: #120b09;
   --charcoal-2: #1c130f;
+  /* background behind the Chef's Selection slider — the edge fade has to
+     match it, so both read from this one value */
+  --showcase-bg: #120b09;
   --red: #cc3d3f;
   --red-deep: #7c2224;
   --gold: #c89b4c;
@@ -315,20 +318,25 @@ section { padding: 88px 0; position: relative; }
 /* ---------- Showcase slider ---------- */
 .showcase { background: var(--charcoal); overflow: hidden; padding-bottom: 50px; }
 .showcase .section-head { margin-bottom: 44px; }
-.showcase-slider {
-  position: relative; max-width: 100%; margin: 0 auto; overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+.showcase-slider { position: relative; max-width: 100%; margin: 0 auto; overflow: hidden; }
+/* Edge fade drawn as two gradient overlays rather than mask-image: masking
+   a wide, permanently-animating layer is an expensive compositing path that
+   iOS Safari has been known to drop, blanking the slider. */
+.showcase-slider::before,
+.showcase-slider::after {
+  content: ''; position: absolute; top: 0; bottom: 0; z-index: 2;
+  width: clamp(24px, 6%, 110px); pointer-events: none;
 }
+.showcase-slider::before { left: 0; background: linear-gradient(90deg, var(--showcase-bg), transparent); }
+.showcase-slider::after { right: 0; background: linear-gradient(270deg, var(--showcase-bg), transparent); }
 /* Continuous auto-scrolling showcase — the track holds the 4 dishes twice
    back to back, and the animation slides exactly one set's width (-50%)
    in a straight line, so it loops with no visible seam or reset. */
 .slider-track {
   display: flex; gap: 28px; width: max-content; padding: 6px 6px 16px;
   animation: showcaseScroll 32s linear infinite;
+  will-change: transform; backface-visibility: hidden;
 }
-.showcase-slider:hover .slider-track,
-.slider-track:focus-within { animation-play-state: paused; }
 @keyframes showcaseScroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -341,7 +349,13 @@ section { padding: 88px 0; position: relative; }
   transition: transform 0.5s var(--ease), border-color 0.3s;
   pointer-events: none;
 }
-.dish-card:hover .dish-media { transform: translateY(-8px); border-color: var(--gold); }
+/* Hover effects only on devices with a real pointer. On touch, iOS latches
+   :hover onto whatever you last touched and never clears it — swiping past
+   the slider would pause the marquee permanently. */
+@media (hover: hover) and (pointer: fine) {
+  .showcase-slider:hover .slider-track { animation-play-state: paused; }
+  .dish-card:hover .dish-media { transform: translateY(-8px); border-color: var(--gold); }
+}
 .dish-info { padding-top: 20px; }
 .dish-num { font-family: var(--ff-head); color: var(--gold); font-size: 0.82rem; letter-spacing: 0.12em; }
 .dish-info h3 { font-size: 1.3rem; font-style: italic; margin: 8px 0 8px; }

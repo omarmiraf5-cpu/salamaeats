@@ -20,6 +20,7 @@
   --ivory-2:    #f6eee1;   /* alternating section bands  */
   --panel:      #f8f1e6;   /* sections that were charcoal */
   --panel-2:    #fffdf9;   /* cards, forms, map          */
+  --showcase-bg: #f8f1e6;  /* must match .showcase's background below */
 
   /* text */
   --ink:        #241d15;   /* primary text  */
