@@ -116,10 +116,6 @@
 .field textarea:focus { border-color: var(--gold); }
 .form-status { color: var(--red-deep); }
 
-/* ---------- marquee: a cheerful tangerine band ---------- */
-.marquee { background: var(--gold); }
-.marquee-track span { color: #3b2408; }
-
 /* ---------- footer ---------- */
 .footer-brand p { color: var(--muted); }
 .footer-nav a { color: var(--ink); opacity: 0.75; }

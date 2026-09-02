@@ -225,7 +225,7 @@ h1, h2, h3, h4 {
   gap: 24px; padding: 26px 34px;
 }
 .hero-logo { display: inline-flex; align-items: center; gap: 9px; color: var(--ink); }
-.hero-logo img { width: 26px; height: 26px; object-fit: contain; flex-shrink: 0; }
+.hero-logo img { width: 42px; height: 42px; object-fit: contain; flex-shrink: 0; }
 .hero-logo span { font-family: var(--ff-head); font-style: italic; font-weight: 600; font-size: 1.15rem; }
 .hero-nav-right { display: flex; align-items: center; gap: 26px; }
 .hero-nav-right > a {
@@ -310,22 +310,16 @@ h1, h2, h3, h4 {
 .slider-track .dish-card:nth-child(4) { transition-delay: 0.24s; }
 .slider-track .dish-card:nth-child(n+5) { transition-delay: 0.3s; }
 
-/* ---------- Marquee ---------- */
-.marquee { background: var(--red); overflow: hidden; padding: 15px 0; margin: 0 14px; border-radius: 999px; }
-.marquee-track { display: flex; white-space: nowrap; animation: scrollMarquee 26s linear infinite; width: max-content; }
-.marquee-track span { font-family: var(--ff-head); font-style: italic; font-size: 1.05rem; color: var(--gold-light); font-weight: 600; }
-@keyframes scrollMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
 /* ---------- Sections ---------- */
-section { padding: 120px 0; position: relative; }
-.section-head { max-width: 620px; margin: 0 auto 56px; text-align: center; }
+section { padding: 88px 0; position: relative; }
+.section-head { max-width: 620px; margin: 0 auto 46px; text-align: center; }
 .section-head h2 { font-size: clamp(2rem, 3.6vw, 2.8rem); font-style: italic; margin-bottom: 14px; }
 .section-lede { color: var(--muted); font-size: 1.02rem; }
 .section-head.light h2 { color: var(--ink); }
 
 /* ---------- Showcase slider ---------- */
-.showcase { background: var(--charcoal); overflow: hidden; padding-bottom: 70px; }
-.showcase .section-head { margin-bottom: 54px; }
+.showcase { background: var(--charcoal); overflow: hidden; padding-bottom: 50px; }
+.showcase .section-head { margin-bottom: 44px; }
 .showcase-slider {
   position: relative; max-width: 100%; margin: 0 auto; overflow: hidden;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
@@ -335,7 +329,7 @@ section { padding: 120px 0; position: relative; }
    back to back, and the animation slides exactly one set's width (-50%)
    in a straight line, so it loops with no visible seam or reset. */
 .slider-track {
-  display: flex; gap: 28px; width: max-content; padding: 6px 6px 30px;
+  display: flex; gap: 28px; width: max-content; padding: 6px 6px 16px;
   animation: showcaseScroll 32s linear infinite;
 }
 .showcase-slider:hover .slider-track,
@@ -541,7 +535,7 @@ section { padding: 120px 0; position: relative; }
     background: var(--ivory); padding: 24px 40px; gap: 20px; border-bottom: 1px solid var(--line);
   }
   .menu-panel { grid-template-columns: 1fr; }
-  section { padding: 84px 0; }
+  section { padding: 64px 0; }
   .form-row { grid-template-columns: 1fr; }
   .visit-details { grid-template-columns: 1fr; }
 }
@@ -554,7 +548,7 @@ section { padding: 120px 0; position: relative; }
   .hero-actions .btn { width: auto; padding: 13px 24px; font-size: 0.72rem; }
   .experience-grid, .gallery-grid { grid-template-columns: 1fr; }
   .g-item.arch { grid-row: span 1; }
-  .slider-track { padding: 6px 10px 26px; gap: 18px; }
+  .slider-track { padding: 6px 10px 16px; gap: 18px; }
   .dish-card { flex-basis: 240px; }
   .dish-media { height: 300px; }
   .gallery-grid { grid-auto-rows: 340px; }
