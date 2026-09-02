@@ -389,14 +389,21 @@ section { padding: 120px 0; position: relative; }
   padding: 14px 0; border-bottom: 1px solid var(--line);
 }
 .mi-thumb {
-  width: 68px; height: 68px; flex-shrink: 0; border-radius: 10px;
+  width: 80px; height: 80px; flex-shrink: 0; border-radius: 10px;
   object-fit: cover; box-shadow: 0 4px 14px rgba(0,0,0,0.25);
 }
-/* Tall, narrow cups/glasses (bubble tea, smoothies) get cropped into an
-   unrecognizable color blob under object-fit:cover — show the whole cup
-   instead, resting on a matching background so it still reads as a tile. */
+/* Drinks are shot as tall cups and glasses, so they can't fill a square
+   frame without either distorting or cropping the rim and boba away.
+   Show the whole drink at its true proportions, centered on its own
+   tile with a little breathing room — the tile (not the photo) is what
+   keeps the column even, so a slim bubble tea and a wide mug can sit in
+   the same list without either one looking squashed. */
 .mi-thumb--fit {
-  object-fit: contain; background: var(--ivory-2);
+  object-fit: contain;
+  padding: 5px;
+  background: var(--charcoal-2);
+  border: 1px solid var(--line);
+  box-shadow: none;
 }
 .mi-content { flex: 1; min-width: 0; }
 .mi-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 6px; }
