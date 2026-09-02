@@ -5,9 +5,10 @@ An elegant, single-page static website for Salaama Eats Ltd, a halal Mediterrane
 ## Structure
 
 - `index.html` — page markup and content
-- `style.css` — all styling (black + gold/red, Cormorant Garamond + Jost)
-- `theme-light.css` — **alternate** bright "Tangerine" theme (cream + tangerine orange). It only
-  overrides `style.css`; remove its `<link>` from `index.html` to return to the dark site.
+- `style.css` — all styling (black background, Cormorant Garamond + Jost)
+- `theme-tangerine.css` — **alternate** accent theme (tangerine-orange instead of the muted gold/red).
+  Background, text and every other surface stay exactly as `style.css` defines them — it only overrides
+  the accent color. Remove its `<link>` from `index.html` to return to the original gold/red accent.
 - `script.js` — nav, scroll reveal, signature-dish slider (arrows, dots, drag-to-scroll, autoplay), menu tabs, testimonial carousel, arch tilt, reservation form
 - `assets/fonts/` — self-hosted woff2 fonts (Great Vibes, Cormorant Garamond, Jost) — no external font requests
 - `assets/logo-mark.webp` / `assets/logo-full.webp` — the owner's real logo (chef-hat/flame emblem, and the
