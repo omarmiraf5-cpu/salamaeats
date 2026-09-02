@@ -188,6 +188,7 @@ h1, h2, h3, h4 {
 .brand-logo { width: 44px; height: 44px; object-fit: contain; flex-shrink: 0; }
 .brand-text { display: flex; flex-direction: column; }
 .brand-mark { font-family: var(--ff-head); font-style: italic; font-weight: 600; font-size: 1.7rem; color: var(--ink); }
+.brand-tagline { font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-top: 2px; font-weight: 500; }
 .brand-sub { font-size: 0.6rem; letter-spacing: 0.3em; color: var(--red); margin-top: 4px; }
 .main-nav { display: flex; gap: 34px; }
 .main-nav a {
@@ -229,7 +230,9 @@ h1, h2, h3, h4 {
 }
 .hero-logo { display: inline-flex; align-items: center; gap: 9px; color: var(--ink); }
 .hero-logo img { width: 42px; height: 42px; object-fit: contain; flex-shrink: 0; }
-.hero-logo span { font-family: var(--ff-head); font-style: italic; font-weight: 600; font-size: 1.15rem; }
+.hero-logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+.hero-logo-title { font-family: var(--ff-head); font-style: italic; font-weight: 600; font-size: 1.15rem; }
+.hero-logo-sub { font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.85; }
 .hero-nav-right { display: flex; align-items: center; gap: 26px; }
 .hero-nav-right > a {
   color: var(--ink); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.03em;
@@ -255,6 +258,12 @@ h1, h2, h3, h4 {
 .hero-mark {
   width: clamp(56px, 8vw, 84px); height: clamp(56px, 8vw, 84px); object-fit: contain;
   margin-bottom: 10px; filter: drop-shadow(0 6px 24px rgba(0,0,0,0.5));
+}
+.hero-cuisine {
+  font-family: var(--ff-head); font-style: italic; font-weight: 600;
+  font-size: clamp(0.85rem, 1.6vw, 1.15rem); letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink); text-shadow: 0 2px 14px rgba(0,0,0,0.7);
+  margin: 0 0 4px;
 }
 .hero-script {
   font-family: 'Great Vibes', 'Snell Roundhand', 'Brush Script MT', cursive;
