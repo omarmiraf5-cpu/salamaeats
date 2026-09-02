@@ -63,9 +63,63 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Signature dishes: continuous auto-scroll is pure CSS (see .slider-track
-  // in style.css) — it doubles the cards and animates translateX(-50%) in
-  // an infinite loop, pausing on hover/focus via :hover/:focus-within.
+  // Signature dishes marquee. Driven by scrollLeft rather than a CSS
+  // transform: transforming the ~3000px track makes iOS Safari promote it to
+  // one giant composited layer, which it discards under memory pressure —
+  // the slider goes blank after a while. Advancing a real scroll container
+  // keeps Safari on its ordinary scrolling path, and lets people swipe it.
+  const dishTrack = document.getElementById('dishTrack');
+  if (dishTrack && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const SPEED = 0.35;           // px per frame, ~21px/s at 60fps
+    let pos = 0;                  // kept as a float; scrollLeft alone would round away sub-pixel steps
+    let paused = false;
+    let userScrolling = null;
+
+    // The second half of the track duplicates the first, so snapping back by
+    // exactly one set's width is invisible. Measure that from the card
+    // positions rather than using scrollWidth/2 — the track's padding and
+    // gaps make those differ by a pixel, which shows up as a visible jump
+    // and drifts further out of register on every loop.
+    const cards = dishTrack.children;
+    const halfWidth = () =>
+      cards.length >= 5 ? cards[cards.length / 2].offsetLeft - cards[0].offsetLeft : 0;
+
+    function frame() {
+      const half = halfWidth();
+      if (!paused && half > 0) {
+        pos += SPEED;
+        if (pos >= half) pos -= half;
+        dishTrack.scrollLeft = pos;
+      }
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+
+    // Let go of the reins while the user is dragging the row themselves,
+    // then pick up from wherever they left it.
+    const resume = () => {
+      clearTimeout(userScrolling);
+      userScrolling = setTimeout(() => {
+        const half = halfWidth();
+        pos = half > 0 ? dishTrack.scrollLeft % half : dishTrack.scrollLeft;
+        paused = false;
+      }, 1200);
+    };
+    dishTrack.addEventListener('touchstart', () => { paused = true; clearTimeout(userScrolling); }, { passive: true });
+    dishTrack.addEventListener('touchend', resume, { passive: true });
+    dishTrack.addEventListener('wheel', () => { paused = true; resume(); }, { passive: true });
+
+    // Pause on hover, but only where hovering is a real thing — on touch,
+    // iOS latches :hover and would never release it.
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      dishTrack.addEventListener('mouseenter', () => { paused = true; });
+      dishTrack.addEventListener('mouseleave', () => {
+        const half = halfWidth();
+        pos = half > 0 ? dishTrack.scrollLeft % half : dishTrack.scrollLeft;
+        paused = false;
+      });
+    }
+  }
 
   // Subtle arch photo tilt on mouse move
   const heroArch = document.querySelector('.heritage-media');

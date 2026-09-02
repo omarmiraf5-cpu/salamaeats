@@ -329,18 +329,23 @@ section { padding: 88px 0; position: relative; }
 }
 .showcase-slider::before { left: 0; background: linear-gradient(90deg, var(--showcase-bg), transparent); }
 .showcase-slider::after { right: 0; background: linear-gradient(270deg, var(--showcase-bg), transparent); }
-/* Continuous auto-scrolling showcase — the track holds the 4 dishes twice
-   back to back, and the animation slides exactly one set's width (-50%)
-   in a straight line, so it loops with no visible seam or reset. */
+/* Continuous auto-scrolling showcase. This is a real scroll container that
+   script.js advances a fraction of a pixel per frame — NOT a CSS transform
+   on one oversized element. Transforming a ~3000px-wide track forces iOS
+   Safari to promote it to a single giant composited layer, which it then
+   discards under memory pressure, blanking the whole slider. Scrolling is
+   the best-tested path in every engine: only the visible tiles get
+   rasterized, nothing huge stays promoted, and people can swipe it by hand.
+   The track holds the 4 dishes twice, so wrapping at the halfway point is
+   invisible. */
 .slider-track {
-  display: flex; gap: 28px; width: max-content; padding: 6px 6px 16px;
-  animation: showcaseScroll 32s linear infinite;
-  will-change: transform; backface-visibility: hidden;
+  display: flex; gap: 28px; padding: 6px 6px 16px;
+  overflow-x: auto; overflow-y: hidden;
+  scroll-behavior: auto; /* must not inherit html's smooth, or the wrap animates */
+  scrollbar-width: none; -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
 }
-@keyframes showcaseScroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
+.slider-track::-webkit-scrollbar { display: none; }
 .dish-card { flex: 0 0 370px; user-select: none; }
 .dish-media {
   display: block; width: 100%; height: 440px; object-fit: cover; object-position: center 50%;
@@ -350,10 +355,9 @@ section { padding: 88px 0; position: relative; }
   pointer-events: none;
 }
 /* Hover effects only on devices with a real pointer. On touch, iOS latches
-   :hover onto whatever you last touched and never clears it — swiping past
-   the slider would pause the marquee permanently. */
+   :hover onto whatever you last touched and never clears it. (The marquee's
+   hover-pause lives in script.js now, guarded the same way.) */
 @media (hover: hover) and (pointer: fine) {
-  .showcase-slider:hover .slider-track { animation-play-state: paused; }
   .dish-card:hover .dish-media { transform: translateY(-8px); border-color: var(--gold); }
 }
 .dish-info { padding-top: 20px; }
@@ -361,9 +365,6 @@ section { padding: 88px 0; position: relative; }
 .dish-info h3 { font-size: 1.3rem; font-style: italic; margin: 8px 0 8px; }
 .dish-info p { color: var(--muted); font-size: 0.88rem; margin-bottom: 12px; min-height: 2.6em; }
 .dish-price { font-family: var(--ff-head); color: var(--red); font-weight: 700; font-size: 1.15rem; }
-@media (prefers-reduced-motion: reduce) {
-  .slider-track { animation: none; }
-}
 
 /* ---------- Heritage ---------- */
 .heritage { background: var(--charcoal); color: var(--ink); overflow: hidden; }
