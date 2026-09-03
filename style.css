@@ -188,7 +188,7 @@ h1, h2, h3, h4 {
 .brand-logo { width: 44px; height: 44px; object-fit: contain; flex-shrink: 0; }
 .brand-text { display: flex; flex-direction: column; }
 .brand-mark { font-family: var(--ff-head); font-style: italic; font-weight: 600; font-size: 1.7rem; color: var(--ink); }
-.brand-sub { font-size: 0.6rem; letter-spacing: 0.3em; color: var(--red); margin-top: 4px; }
+.brand-sub { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--red); margin-top: 4px; }
 .main-nav { display: flex; gap: 34px; }
 .main-nav a {
   color: var(--ink); font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase;
@@ -229,7 +229,13 @@ h1, h2, h3, h4 {
 }
 .hero-logo { display: inline-flex; align-items: center; gap: 9px; color: var(--ink); }
 .hero-logo img { width: 42px; height: 42px; object-fit: contain; flex-shrink: 0; }
-.hero-logo span { font-family: var(--ff-head); font-style: italic; font-weight: 600; font-size: 1.15rem; }
+.hero-logo-text { display: flex; flex-direction: column; line-height: 1.05; }
+.hero-logo-name { font-family: var(--ff-head); font-style: italic; font-weight: 600; font-size: 1.15rem; }
+.hero-logo-sub {
+  font-family: var(--ff-body); font-style: normal; font-weight: 500;
+  font-size: 0.53rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold-light); margin-top: 3px;
+}
 .hero-nav-right { display: flex; align-items: center; gap: 26px; }
 .hero-nav-right > a {
   color: var(--ink); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.03em;
@@ -261,8 +267,26 @@ h1, h2, h3, h4 {
   font-weight: 400; font-style: normal;
   font-size: clamp(3.6rem, 11vw, 8rem); line-height: 1;
   color: var(--ink); text-shadow: 0 6px 40px rgba(0,0,0,0.6);
-  margin-bottom: 18px;
+  margin-bottom: 8px;
 }
+/* "Mediterranean Grill" sits under the script logotype, flanked by hairlines
+   so it reads as part of the lockup rather than a second tagline. */
+.hero-name-sub {
+  display: flex; align-items: center; justify-content: center;
+  gap: clamp(10px, 2vw, 18px);
+  font-size: clamp(0.66rem, 1.2vw, 0.8rem);
+  letter-spacing: 0.32em; text-transform: uppercase; font-weight: 500;
+  color: var(--gold-light); margin-bottom: 18px;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.75);
+}
+.hero-name-sub::before,
+.hero-name-sub::after {
+  content: ""; height: 1px; width: clamp(22px, 6vw, 64px); flex-shrink: 0;
+  background: linear-gradient(90deg, transparent, var(--gold-light));
+}
+.hero-name-sub::after { background: linear-gradient(90deg, var(--gold-light), transparent); }
+/* nudge back the trailing letter-space so the words optically centre */
+.hero-name-sub span { padding-left: 0.32em; }
 .hero-tagline {
   font-size: clamp(0.72rem, 1.3vw, 0.86rem); letter-spacing: 0.26em; text-transform: uppercase;
   font-weight: 500; color: var(--ink); margin-bottom: 10px;
@@ -456,6 +480,10 @@ section { padding: 88px 0; position: relative; }
 /* ---------- Reserve ---------- */
 .reserve { background: var(--charcoal); overflow: hidden; }
 .reserve-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 80px; align-items: start; }
+/* grid tracks default to min-width:auto, so a track will refuse to shrink below
+   the intrinsic width of an <input>/<select> inside it. On narrow phones that
+   pushed the form past .reserve's overflow:hidden and clipped it. */
+.reserve-grid > * { min-width: 0; }
 .reserve-copy h2 { color: var(--ink); font-style: italic; margin-bottom: 20px; font-size: clamp(2.2rem, 4vw, 3rem); }
 .reserve-copy p { color: rgba(243,233,216,0.68); margin-bottom: 26px; max-width: 440px; }
 .reserve-list li { color: var(--ink); font-size: 0.92rem; padding: 12px 0 12px 26px; border-bottom: 1px solid var(--line-light); position: relative; }
@@ -465,7 +493,7 @@ section { padding: 88px 0; position: relative; }
 .field { margin-bottom: 20px; }
 .field label { display: block; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px; }
 .field input, .field select, .field textarea {
-  width: 100%; background: rgba(243,233,216,0.05); border: 1px solid var(--line-light);
+  width: 100%; min-width: 0; background: rgba(243,233,216,0.05); border: 1px solid var(--line-light);
   color: var(--ink); padding: 13px 16px; border-radius: var(--radius-sm);
   font-family: var(--ff-body); font-size: 0.92rem;
   transition: border-color 0.3s;
@@ -478,6 +506,10 @@ section { padding: 88px 0; position: relative; }
 .visit { background: var(--ivory); }
 .visit-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; align-items: stretch; }
 .visit-info h2 { margin-bottom: 6px; font-style: italic; font-size: clamp(1.9rem, 3vw, 2.5rem); }
+.visit-sub {
+  font-size: 0.7rem; letter-spacing: 0.26em; text-transform: uppercase;
+  font-weight: 500; color: var(--accent-deep, var(--gold));
+}
 .visit-info address { font-style: italic; font-family: var(--ff-head); font-size: 1.3rem; margin: 8px 0 32px; color: var(--muted); }
 .visit-details { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 32px; }
 .visit-details h4 { font-size: 0.76rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--red); margin-bottom: 10px; font-family: var(--ff-body); font-weight: 500; }
@@ -565,6 +597,8 @@ section { padding: 88px 0; position: relative; }
   .experience-grid, .gallery-grid { grid-template-columns: 1fr; }
   .g-item.arch { grid-row: span 1; }
   .slider-track { padding: 6px 10px 16px; gap: 18px; }
+  /* 44px of form padding costs a third of the width on a small phone */
+  .reserve-form { padding: 28px 20px; }
   .dish-card { flex-basis: 240px; }
   .dish-media { height: 300px; }
   .gallery-grid { grid-auto-rows: 340px; }
