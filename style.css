@@ -480,6 +480,10 @@ section { padding: 88px 0; position: relative; }
 /* ---------- Reserve ---------- */
 .reserve { background: var(--charcoal); overflow: hidden; }
 .reserve-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 80px; align-items: start; }
+/* grid tracks default to min-width:auto, so a track will refuse to shrink below
+   the intrinsic width of an <input>/<select> inside it. On narrow phones that
+   pushed the form past .reserve's overflow:hidden and clipped it. */
+.reserve-grid > * { min-width: 0; }
 .reserve-copy h2 { color: var(--ink); font-style: italic; margin-bottom: 20px; font-size: clamp(2.2rem, 4vw, 3rem); }
 .reserve-copy p { color: rgba(243,233,216,0.68); margin-bottom: 26px; max-width: 440px; }
 .reserve-list li { color: var(--ink); font-size: 0.92rem; padding: 12px 0 12px 26px; border-bottom: 1px solid var(--line-light); position: relative; }
@@ -489,7 +493,7 @@ section { padding: 88px 0; position: relative; }
 .field { margin-bottom: 20px; }
 .field label { display: block; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 8px; }
 .field input, .field select, .field textarea {
-  width: 100%; background: rgba(243,233,216,0.05); border: 1px solid var(--line-light);
+  width: 100%; min-width: 0; background: rgba(243,233,216,0.05); border: 1px solid var(--line-light);
   color: var(--ink); padding: 13px 16px; border-radius: var(--radius-sm);
   font-family: var(--ff-body); font-size: 0.92rem;
   transition: border-color 0.3s;
@@ -593,6 +597,8 @@ section { padding: 88px 0; position: relative; }
   .experience-grid, .gallery-grid { grid-template-columns: 1fr; }
   .g-item.arch { grid-row: span 1; }
   .slider-track { padding: 6px 10px 16px; gap: 18px; }
+  /* 44px of form padding costs a third of the width on a small phone */
+  .reserve-form { padding: 28px 20px; }
   .dish-card { flex-basis: 240px; }
   .dish-media { height: 300px; }
   .gallery-grid { grid-auto-rows: 340px; }
